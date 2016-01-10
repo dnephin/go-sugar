@@ -1,8 +1,14 @@
 
 # go-sugar
 
-A library to provide some of the syntactic sugar that is omitted from the core
-language.
+Go is "missing" a lot of the syntactic sugar that I appreciated in languages
+like Python and Scala. Most of what I have read suggests I should give it time
+and it will start to feel natural.  The Golang authors have often rejected
+proposals which add this syntactic sugar to the core library.
+
+This repo tracks the things I feel are missing. Maybe everyone is right, and
+eventually I won't miss these niceties, or maybe eventually I'll turn this into
+a library to provide them.
 
 
 ## Maps
@@ -25,8 +31,17 @@ language.
     Flatten(seq [][]T) []T
     FlatMap(f func(item T) []U, seq []T) []U
 
+## Channels
 
-## Links
+    Drain(c chan T) []T
+    Fill(seq []T) chan T
+
+
+## Related
+
+A list of related projects. `gen` looks very promising. It provides some of this
+(although uses C# naming instead of the more familiar Python/Scala naming). It
+may at least provide a mechanism for creating this.
 
 * http://clipperhouse.github.io/gen/
 * https://github.com/cheekybits/genny (inactive? no commits in almost a year)
@@ -35,5 +50,4 @@ language.
 * https://github.com/reusee/ccg
 * https://github.com/ncw/gotemplate
 * https://github.com/joeshaw/gengen
-
 * http://blog.ralch.com/tutorial/golang-code-generation-and-generics/
